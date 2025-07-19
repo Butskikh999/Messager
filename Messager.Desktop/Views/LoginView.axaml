@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Messager.Desktop.Views.LoginView">
+    <Grid ShowGridLines="False"
+          ColumnDefinitions="150,*,150"
+          RowDefinitions="100,*,90">
+        <WrapPanel Grid.Row="0" Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom">
+            <TextBlock Text="Login to your account"
+                       Foreground="Teal"
+                       FontSize="30">
+            </TextBlock>
+        </WrapPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <TextBox Width="200" Watermark="Login"
+                     Margin="0,5,0,10"
+                     x:Name="numericWatermark" />
+            <TextBox Width="200"
+                     Watermark="Password"
+                     Classes="revealPasswordButton"
+                     UseFloatingWatermark="False"
+                     PasswordChar="*"/>
+            <Button HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    Margin="0,10,0,10"
+                    Background="DodgerBlue">Login</Button>
+            <Button HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    Foreground="White"
+                    Content="Create a new account"
+                    x:CompileBindings="False"
+                    Command="{Binding $parent[Window].DataContext.RegistrationButton}">
+                
+            </Button>
+            <TextBlock Text="Error Message"
+                       Margin="5"
+                       HorizontalAlignment="Center" 
+                       Foreground="IndianRed" 
+                       FontSize="18" />
+        </StackPanel>
+        
+    </Grid>
+</UserControl>
