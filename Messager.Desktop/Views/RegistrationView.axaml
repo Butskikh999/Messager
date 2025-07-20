@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Messager.Desktop.Views.RegistrationView">
+    <Grid ShowGridLines="False"
+          ColumnDefinitions="150,*,150"
+          RowDefinitions="100,*,90">
+        <WrapPanel Grid.Row="0" Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom">
+            <TextBlock Text="Creating new account"
+                       Foreground="Teal"
+                       FontSize="30">
+            </TextBlock>
+        </WrapPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <TextBlock Text="User name"></TextBlock>
+            <TextBox Width="200" Watermark="Name"
+                     x:Name="numericWatermark" />
+            <TextBlock Text="Password"></TextBlock>
+            <TextBox Width="200"
+                     Watermark="Password"
+                     Classes="revealPasswordButton"
+                     UseFloatingWatermark="False"
+                     PasswordChar="*"/>
+            <TextBlock Text="Confirm password"></TextBlock>
+            <TextBox Width="200"
+                     Watermark="Confirm Password"
+                     Classes="revealPasswordButton"
+                     UseFloatingWatermark="False"
+                     PasswordChar="*"/>
+            <Button HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    Margin="0,10,0,0"
+                    Background="DodgerBlue"
+                    Content="Create account"/>
+            <Button HorizontalAlignment="Stretch"
+                    Margin="0,10,0,0"
+                    HorizontalContentAlignment="Center"
+                    Background="RoyalBlue"
+                    Content="⮨ Back"
+                    x:CompileBindings="False"
+                    Command="{Binding $parent[Window].DataContext.BackToLoginPageButton}">
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

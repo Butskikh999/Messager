@@ -25,4 +25,8 @@
         </PackageReference>
         <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.1"/>
     </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Widows\LoginWindow.axaml" />
+    </ItemGroup>
 </Project>
